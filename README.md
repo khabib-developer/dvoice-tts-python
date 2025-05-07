@@ -141,7 +141,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 - **API Documentation**: [https://oyqiz.airi.uz/api/v2/tts](https://oyqiz.airi.uz/api/v2/tts)
 - **WebSocket Endpoint**: `ws://oyqiz.airi.uz/stream`
-- **Maintainer**: [airi.uz](https://oyqiz.airi.uz)
 
 ## 🌟 Contributing
 
