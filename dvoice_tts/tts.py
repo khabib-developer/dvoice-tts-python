@@ -15,6 +15,7 @@ class TTS:
             self.api_url,
             headers={"token": f"{self.token}"},
             json={"model": model, "text": text, "format": format},
+            verify=False
         )
         response.raise_for_status()
         return response.content
