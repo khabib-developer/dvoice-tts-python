@@ -38,7 +38,7 @@ Use the `single()` method to generate an audio file from text:
 try:
     audio = tts.single(
         model="default",
-        text="Hello, world!",
+        text="Salom!",
         format="mp3"  # Options: 'mp3', 'wav', 'ogg', 'aac', 'flac'
     )
     # Save audio to file
@@ -68,7 +68,7 @@ def on_chunk(err, chunk, close):
 
 tts.stream(
     model="default",
-    text="Streaming speech in real-time!",
+    text="Davomiy nutqni real vaqtda translatsiya qilish!",
     format="mp3",  # Options: 'mp3', 'wav', 'ogg', 'aac', 'flac'
     callback=on_chunk
 )
