@@ -1,5 +1,5 @@
 import requests
-import websocket
+from websocket import WebSocketApp
 import threading
 from urllib.parse import urlencode
 
@@ -15,7 +15,7 @@ class TTS:
             self.api_url,
             headers={"token": f"{self.token}"},
             json={"model": model, "text": text, "format": format},
-            verify=False
+             verify=False
         )
         response.raise_for_status()
         return response.content
@@ -32,13 +32,14 @@ class TTS:
         def on_close(ws, close_status_code, close_msg):
             callback(None, None, lambda: ws.close())
 
-        ws = websocket.WebSocketApp(
+        ws = WebSocketApp(
             f"{self.ws_url}?{params}",
             header=[f"token: {self.token}"],
             on_message=on_message,
             on_error=on_error,
             on_close=on_close,
         )
+
 
         thread = threading.Thread(target=ws.run_forever)
         thread.daemon = True
